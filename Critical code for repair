@@ -1,0 +1,21 @@
+public String add() {
+		Bx bean = new Bx();
+		bean.setDescs(descs);
+		bean.setHfdescs("");
+		bean.setTitles(titles);
+		bean.setHtimes("");
+		bean.setStates("Pending review");
+		Map session = ServletActionContext.getContext().getSession();
+		Stu admin = (Stu) session.get("admin");
+		bean.setStunames(admin.getRealname());
+		bean.setTypes(types);
+		bean.setYgnames("");
+		Date date2 = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		String strDate2 = formatter.format(date2);
+		bean.setTimes(strDate2);
+		dao.save(bean);
+		this.setMessage("Added successfully");
+		this.setPath("bxmana.action");
+		return "succeed";
+	}
