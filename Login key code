@@ -1,0 +1,39 @@
+public String login() {
+		String result = "";
+		String sql = "from TAdmin where username=? and password=?";
+		Object[] con = { username, password };
+		List adminList = adminDAO.getHibernateTemplate().find(sql, con);
+		if (adminList.size() != 0) {
+			Map session = ServletActionContext.getContext().getSession();
+			TAdmin admin = (TAdmin) adminList.get(0);
+			session.put("userType", 1);
+			session.put("names", admin.getUsername());
+			session.put("admin", admin);
+			result = "yes";
+		} else {
+			sql = "from Stu where stuno=? and password=?";
+			adminList = adminDAO.getHibernateTemplate().find(sql, con);
+			if (adminList.size() != 0) {
+				Map session = ServletActionContext.getContext().getSession();
+				Stu admin = (Stu) adminList.get(0);
+				session.put("userType", 2);
+				session.put("admin", admin);
+				session.put("names", admin.getRealname());
+				result = "yes";
+			} else {
+				sql = "from Yg where no=? and password=?";
+				adminList = adminDAO.getHibernateTemplate().find(sql, con);
+				if (adminList.size() != 0) {
+					Map session = ServletActionContext.getContext().getSession();
+					Yg admin = (Yg) adminList.get(0);
+					session.put("userType", 3);
+					session.put("admin", admin);
+					session.put("names", admin.getRealname());
+					result = "yes";
+				} else {
+					result = "no";
+				}
+			}
+		}
+		return result;
+	}
