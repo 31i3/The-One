@@ -1,0 +1,16 @@
+To add an announcement message:
+
+
+public String add() {
+		Gg bean = new Gg();
+		bean.setDescs(descs);
+		bean.setTitles(titles);
+		Date date2 = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		String strDate2 = formatter.format(date2);
+		bean.setTimes(strDate2);
+		dao.save(bean);
+		this.setMessage("Added successfully");
+		this.setPath("ggmana.action");
+		return "succeed";
+	}
