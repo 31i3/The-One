@@ -1,0 +1,17 @@
+public String modify() {
+		Yg bean = dao.findById(id);
+		bean.setPassword(password);
+		bean.setRealname(realname);
+		bean.setTel(tel);
+		dao.merge(bean);
+		this.setMessage("Successful operation");
+		this.setPath("ygmana.action");
+		return "succeed";
+	}
+
+	public String del() {
+		dao.delete(dao.findById(id));
+		this.setMessage("Successfully deleted");
+		this.setPath("ygmana.action");
+		return "succeed";
+	}
