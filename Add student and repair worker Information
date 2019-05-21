@@ -1,0 +1,32 @@
+Add Student Information:
+
+public String add() {
+		Stu bean = new Stu();
+		bean.setPassword(password);
+		bean.setRealname(realname);
+		bean.setStuno(stuno);
+		bean.setTel(tel);
+		bean.setSex(sex);
+		dao.save(bean);
+		
+		this.setMessage("Added successfully");
+		this.setPath("stumana.action");
+		return "succeed";
+	}
+
+
+Add repair worker Information:
+
+public String add() {
+		Yg bean = new Yg();
+		bean.setPassword(password);
+		bean.setRealname(realname);
+		bean.setNo(no);
+		bean.setTel(tel);
+		bean.setSex(sex);
+		dao.save(bean);
+		
+		this.setMessage("Added successfully");
+		this.setPath("ygmana.action");
+		return "succeed";
+	}
