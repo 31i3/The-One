@@ -1,0 +1,29 @@
+public String modifybefore() {
+		Bx bean = dao.findById(id);
+		Map request = (Map) ServletActionContext.getContext().get("request");
+		request.put("bean", bean);
+		return ActionSupport.SUCCESS;
+	}
+public String bxjgadd() {
+		Bx bean = dao.findById(id);
+		bean.setHfdescs(descs);
+		Date date2 = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		String strDate2 = formatter.format(date2);
+		bean.setHtimes(strDate2);
+		Map session = ServletActionContext.getContext().getSession();
+		Yg admin = (Yg) session.get("admin");
+		bean.setYgnames(admin.getRealname());
+		bean.setStates("Completed");//完成
+		dao.merge(bean);
+		this.setMessage("Successful operation");//操作成功
+		this.setPath("bxmanatg.action");
+		return "succeed";
+	}
+public String del() {
+		dao.delete(dao.findById(id));
+		this.setMessage("Successfully deleted");//删除成功
+		this.setPath("ggmana.action");
+		return "succeed";
+	}
+
