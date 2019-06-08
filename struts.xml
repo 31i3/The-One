@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC   
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<package name="liu" extends="struts-default">
+		<global-results>
+			<result name="succeed">/common/succeed.jsp</result>
+			<result name="successAdd">/common/add_success.jsp</result>
+			<result name="successDel">/common/del_success.jsp</result>
+			<result name="successUpdate">/common/update_success.jsp</result>
+		</global-results>
+
+		<action name="upload" class="com.util.upload" method="upload">
+			<result name="success">/upload/upload_re.jsp</result>
+		</action>
+
+		<action name="login" class="adminAction" method="login">
+			<result name="yes">/index.jsp</result>
+			<result name="no">/login.jsp</result>
+		</action>
+		<action name="loginout" class="adminAction" method="loginout">
+			<result name="success">/login.jsp</result>
+		</action>
+		
+		<action name="adminupdatepwd" class="adminAction" method="adminupdatepwd">
+			<result name="success">/admin/adminupdatepwd.jsp</result>
+		</action>
+		
+		
+		<!-- 学生开始 -->
+		<action name="stumana" class="stuAction" method="mana">
+			<result name="success">/stulist.jsp</result>
+		</action>
+		<action name="stucardmana" class="stuAction" method="stucardmana">
+			<result name="success">/admin/stucardlist.jsp</result>
+		</action>
+		<action name="stuadd" class="stuAction" method="add">
+		</action>
+		<action name="stumodifybefore" class="stuAction" method="modifybefore">
+			<result name="success">/stumodify.jsp</result>
+		</action>
+		<action name="stumodify" class="stuAction" method="modify">
+		</action>
+		<action name="studel" class="stuAction" method="del">
+		</action>
+		<action name="stucx" class="stuAction" method="stucx">
+		</action>
+		<action name="stuqy" class="stuAction" method="stuqy">
+		</action>
+		<action name="stucz" class="stuAction" method="stucz">
+		</action>
+		<action name="czjlmana" class="stuAction" method="czjlmana">
+			<result name="success">/admin/czjllist.jsp</result>
+		</action>
+		<action name="sjjlmana" class="stuAction" method="sjjlmana">
+			<result name="success">/admin/sjjllist.jsp</result>
+		</action>
+		<action name="stucardpwdupdate" class="stuAction" method="stucardpwdupdate">
+			<result name="success">/admin/updatecardpwd.jsp</result>
+		</action>
+		<!-- 学生结束 -->
+		<action name="ygmana" class="ygAction" method="mana">
+			<result name="success">/yglist.jsp</result>
+		</action>
+		<action name="ygadd" class="ygAction" method="add">
+		</action>
+		<action name="ygmodifybefore" class="ygAction" method="modifybefore">
+			<result name="success">/ygmodify.jsp</result>
+		</action>
+		<action name="ygmodify" class="ygAction" method="modify">
+		</action>
+		<action name="ygdel" class="ygAction" method="del">
+		</action>
+		
+		<action name="ggmana" class="ggAction" method="mana">
+			<result name="success">/gglist.jsp</result>
+		</action>
+		<action name="ggmana2" class="ggAction" method="mana2">
+			<result name="success">/gglist2.jsp</result>
+		</action>
+		
+		<action name="ggmodifybefore" class="ggAction" method="modifybefore">
+			<result name="success">/ggmodify.jsp</result>
+		</action>
+		
+		<action name="ggadd" class="ggAction" method="add">
+		</action>
+		<action name="ggdel" class="ggAction" method="del">
+		</action>
+		<action name="ggmodify" class="ggAction" method="modify">
+		</action>
+		
+		
+		<action name="bxmana" class="bxAction" method="mana">
+			<result name="success">/bxlist.jsp</result>
+		</action>
+		<action name="jlmana" class="bxAction" method="jlmana">
+			<result name="success">/jllist.jsp</result>
+		</action>
+		<action name="bxmanaall" class="bxAction" method="manaall">
+			<result name="success">/bxlistall.jsp</result>
+		</action>
+		<action name="bxmanawc" class="bxAction" method="manawc">
+			<result name="success">/bxlistwc.jsp</result>
+		</action>
+		<action name="bxmanadsh" class="bxAction" method="manadsh">
+			<result name="success">/bxlistdsh.jsp</result>
+		</action>
+		<action name="bxmanatg" class="bxAction" method="manatg">
+			<result name="success">/bxlisttg.jsp</result>
+		</action>
+		<action name="bxmanadsh" class="bxAction" method="manadsh">
+			<result name="success">/bxlistdsh.jsp</result>
+		</action>
+		<action name="bxadd" class="bxAction" method="add">
+		</action>
+		<action name="jladd" class="bxAction" method="jladd">
+		</action>
+		<action name="bxsh" class="bxAction" method="bxsh">
+		</action>
+		<action name="bxjgadd" class="bxAction" method="bxjgadd">
+		</action>
+		<action name="bxsh" class="bxAction" method="bxsh">
+		</action>
+		
+		<action name="bxmodifybefore" class="bxAction" method="modifybefore">
+			<result name="success">/bxmodify.jsp</result>
+		</action>
+		<action name="bxmodify" class="bxAction" method="modify">
+		</action>
+		<action name="bxdel" class="bxAction" method="del">
+		</action>
+	</package>
+</struts>
